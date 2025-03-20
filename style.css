@@ -461,3 +461,32 @@ img{
         font-size: 16px;
     }
 } 
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-section label {
+        font-size: 14px;
+    }
+
+    .form-section input {
+        font-size: 14px;
+    }
+
+    button.commander {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+.partieFooter {
+    font-size: 1.2em;
+}
+
+.piedPage2 h2 {
+    font-size: 1em;
+    padding: 8px;
+}
+

@@ -121,6 +121,12 @@
       background-color: rgba(252, 234, 131, 0.973);
   }
   
+  img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 
 /* Animation pour le texte */
 @keyframes fadeIn {
@@ -425,28 +431,14 @@ h2:hover{
         justify-content: center;
     }
 
-    .partieMain1 h1 {
-        font-size: 24px;
-    }
-
-    .partieMain1 h2 {
-        font-size: 18px;
-    }
-
-    .partieMainDeuxieme {
-        grid-template-columns: 1fr;
-    }
-
-    .partieMain2, .maybachPartieMain, .partieMain3, .partieMain4 {
-        padding: 15px;
-    }
-
-    .partieMain2 h1, .partieMain3 h1, .partieMain4 h1 {
+    .hero-text, .sub-text {
         font-size: 20px;
+        text-align: center;
     }
-
-    .partieMain2 h2, .partieMain3 h2, .partieMain4 h2 {
-        font-size: 16px;
+    .contenuMain, .caracteristique {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
     .piedPage, .piedPage2 {
@@ -458,3 +450,32 @@ h2:hover{
         font-size: 16px;
     }
 } 
+
+@media (max-width: 480px) {
+    .form-section {
+        padding: 15px;
+    }
+
+    .form-section label {
+        font-size: 14px;
+    }
+
+    .form-section input {
+        font-size: 14px;
+    }
+
+    button.commander {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+.partieFooter {
+    font-size: 1.2em;
+}
+
+.piedPage2 h2 {
+    font-size: 1em;
+    padding: 8px;
+}
+

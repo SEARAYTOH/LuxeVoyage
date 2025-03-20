@@ -223,8 +223,6 @@ button.commander:hover {
 }
 
 
-
-
 /* Footer */
 .partieFooter{
     background-color: black;
@@ -313,6 +311,8 @@ button.commander:hover {
     flex-direction: column;
 }
 
+
+
 /* Animation pour le texte */
 @keyframes fadeIn {
     from {
@@ -374,36 +374,6 @@ img:hover {
     }
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar h1 {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-
-    .menu a {
-        font-size: 14px;
-        margin: 10px;
-    }
-
-    .mainPartie {
-        padding: 20px;
-        margin: 10px;
-        max-width: 100%;
-    }
-
-    .success-message {
-        font-size: 16px;
-    }
-}
-
-/* Mobile styles */
-/* Media Queries pour les petits écrans */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -441,57 +411,52 @@ img:hover {
         justify-content: center;
     }
 
-    .partieMain1 h1 {
-        font-size: 24px;
-    }
-
-    .partieMain1 h2 {
-        font-size: 18px;
-    }
-
-    .partieMainDeuxieme {
-        grid-template-columns: 1fr;
-    }
-
-    .partieMain2, .maybachPartieMain, .partieMain3, .partieMain4 {
-        padding: 15px;
-    }
-
-    .partieMain2 h1, .partieMain3 h1, .partieMain4 h1 {
+    .hero-text, .sub-text {
         font-size: 20px;
+        text-align: center;
     }
 
-    .partieMain2 h2, .partieMain3 h2, .partieMain4 h2 {
-        font-size: 16px;
+    .background-image {
+        height: 100%;
     }
 
-    .piedPage, .piedPage2 {
+    .form-section {
+        width: 100%;
+    }
+
+    .piedPage2 {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .piedPage h2, .piedPage2 h2 {
-        font-size: 16px;
-    }
-} 
-
-@media (max-width: 480px) {
-    .menu a {
-        font-size: 12px;
-        margin: 5px;
-    }
-
-    .mainPartie {
-        padding: 15px;
-        max-width: 100%;
-    }
-
-    input[type="text"], input[type="tel"], input[type="email"], input[type="checkbox"] {
-        padding: 12px;
-    }
-
-    .Commander {
-        width: 100%;
-        font-size: 16px;
+        text-align: center;
     }
 }
+  
+        @media (max-width: 480px) {
+            .form-section {
+                padding: 15px;
+            }
+        
+            .form-section label {
+                font-size: 14px;
+            }
+        
+            .form-section input {
+                font-size: 14px;
+            }
+        
+            button.commander {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        .partieFooter {
+            font-size: 1.2em;
+        }
+    
+        .piedPage2 h2 {
+            font-size: 1em;
+            padding: 8px;
+        }
+     
+    

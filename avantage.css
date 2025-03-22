@@ -459,6 +459,13 @@ h2:hover{
         padding: 15px;
     }
 
+    .mainTotale{
+        max-width: 1200px;  /* Ou 1440px pour un site plus large */
+        width: 100%;        /* S'adapte aux écrans plus petits */
+        margin: 0 auto;     /* Centre le contenu */
+        padding: 10px;      /* Ajoute de l'espace sur les côtés */ 
+    }
+
     .contenuMain, .caracteristique, .passezAction {
         width: 95%;
         padding: 10px;
@@ -488,6 +495,13 @@ h2:hover{
     
     .MainEnTete2 {
         padding: 10px;
+    }
+
+    .mainTotale{
+        max-width: 1200px;  /* Ou 1440px pour un site plus large */
+        width: 100%;        /* S'adapte aux écrans plus petits */
+        margin: 0 auto;     /* Centre le contenu */
+        padding: 5px;      /* Ajoute de l'espace sur les côtés */ 
     }
 
     .contenuMain, .caracteristique, .passezAction {

@@ -122,6 +122,7 @@
   }
   
   img{
+    max-width: 100%;
     width: 100%;
     height: auto;
     max-height: auto; 
@@ -140,12 +141,6 @@
     }
 }
 
-.mainTotale {  max-width: 1200px;  /* Ou 1440px pour un site plus large */
-width: 100%;        /* S'adapte aux écrans plus petits */
-margin: 0 auto;     /* Centre le contenu */
-padding: 16px;      /* Ajoute de l'espace sur les côtés */
-} 
-
 /* Appliquer l'effet d'apparition progressive */
 .mainTotale h1, .contenuMain h2 {
     opacity: 0;
@@ -154,12 +149,16 @@ padding: 16px;      /* Ajoute de l'espace sur les côtés */
 }
 
 /* Effet de zoom au survol des images */
+
 img {
-    transition: transform 2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease-in-out, opacity 0.5s;
 }
 
 img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    opacity: 0.9;
 }
 
 /* Animation du menu mobile */
@@ -195,32 +194,32 @@ img:hover {
     }
 }
 
-.mainTotale{
-    max-width: 1200px;  /* Ou 1440px pour un site plus large */
-    width: 100%;        /* S'adapte aux écrans plus petits */
-    margin: 0 auto;     /* Centre le contenu */
-    padding: 16px;      /* Ajoute de l'espace sur les côtés */ 
+.partieMain {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
 }
 
-.MainEnTete1 {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100px;
-    background-color:rgb(162, 110, 14) ;
+.partieMain1 {
+    background-color: white;
     color: black;
-    padding: 20px 0;
     text-align: center;
-    border: solid;
+    padding: 20px;
     border-radius: 20px;
-    box-shadow: 0px 0px 10px 10px;
-    position: relative;
-    animation: scrollText 10s linear infinite;
-    font-size: large;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s, transform 0.3s;
+}
+
+
+.partieMain1:hover{
+    background-color: rgb(162, 110, 14);
+    color: black;
+    transform: scale(1.05);
+}
+
+.hidden {
+    top: -100px; /* Fait disparaître la section en haut */
 }
 
 .MainEnTete1 h1 {
@@ -230,78 +229,52 @@ img:hover {
 }
 
 .deroulant{
+    width: 100%;
+    max-width: 1200px;
     font-size: large;
 }
 
-.contenuMain{
-    border: solid;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.contenuMain, .caracteristique, .passezAction {
     background-color: #333;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px 0;
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
 }
 
-.caracteristique h1{
-    border: solid;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 700px;
-    height:100px ;
-    margin: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    cursor: pointer;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.caracteristique h1, .passezAction h1 {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
-}
-
-.caracteristique h1:hover{
-    background-color:rgb(162, 110, 14) ;
     color: black;
-    width: 100%;
-    transition: 5s;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.5s, transform 0.3s;
 }
+
+.caracteristique h1:hover, .passezAction h1:hover {
+    background-color: rgb(162, 110, 14);
+    transform: scale(1.05);
+}
+
 
 .caracteristique h2{
     margin-left: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.passezAction h1{
-    border: solid;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 700px;
-    height:100px ;
-    margin: 20px;
-    padding-bottom: 10px;
-    cursor: pointer;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.passezAction h1:hover{
-    background-color:rgb(162, 110, 14) ;
-    color: black;
-    width: 100%;
-    transition: 5s;
 }
 
 .passezAction h2{
@@ -314,13 +287,45 @@ img:hover {
     border-radius: 20px;
 }
 
-h2{
+h2 {
+    font-size: large;
     cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
 }
 
-h2:hover{
+h2:hover {
     color: white;
+    transform: translateX(10px);
 }
+
+
+/* Animation apparition progressive */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.partieMain1 h1, .contenuMain h2, .caracteristique h1, .passezAction h1 {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* Boutons animés */
+button {
+    background: rgb(162, 110, 14);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: medium;
+}
+
+button:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
 
 
 /* Footer */
@@ -346,6 +351,7 @@ h2:hover{
     height: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: x-large;
 }
 
 .piedPage:hover{
@@ -450,30 +456,15 @@ h2:hover{
         justify-content: center;
     }
 
-    .hero-text, .sub-text {
-        font-size: 20px;
-        text-align: center;
-    }
-   
-    .MainEnTete2 {
+    .contenuMain, .caracteristique, .passezAction {
         padding: 15px;
     }
-
-    .mainTotale{
-        max-width: 1200px;  /* Ou 1440px pour un site plus large */
-        width: 100%;        /* S'adapte aux écrans plus petits */
-        margin: 0 auto;     /* Centre le contenu */
-        padding: 10px;      /* Ajoute de l'espace sur les côtés */ 
-    }
-
-    .contenuMain, .caracteristique, .passezAction {
-        width: 95%;
-        padding: 10px;
-    }
-
     .caracteristique h1, .passezAction h1 {
-        font-size: 24px;
+        font-size: 1.2em;
         padding: 10px;
+    }
+    h2 {
+        font-size: 1em;
     }
 
     .piedPage, .piedPage2 {
@@ -495,13 +486,6 @@ h2:hover{
     
     .MainEnTete2 {
         padding: 10px;
-    }
-
-    .mainTotale{
-        max-width: 1200px;  /* Ou 1440px pour un site plus large */
-        width: 100%;        /* S'adapte aux écrans plus petits */
-        margin: 0 auto;     /* Centre le contenu */
-        padding: 5px;      /* Ajoute de l'espace sur les côtés */ 
     }
 
     .contenuMain, .caracteristique, .passezAction {

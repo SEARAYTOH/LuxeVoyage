@@ -123,6 +123,21 @@
       background-color: rgba(252, 234, 131, 0.973);
   }
   
+  /* Boutons animés */
+button {
+    background: rgb(162, 110, 14);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: medium;
+}
+
+button:hover {
+    color: black;
+    transform: scale(1.1);
+}
 
 /* Animation pour le texte */
 @keyframes fadeIn {
@@ -210,6 +225,19 @@ img{
 
 /* Partie principale */
 
+/* Animation apparition progressive */
+
+h2 {
+    font-size: large;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+}
+
+h2:hover {
+    color: white;
+    transform: translateX(10px);
+}
+
 .partieMain1 {
     overflow: hidden;
     white-space: nowrap;
@@ -225,6 +253,11 @@ img{
     box-shadow: 0px 0px 10px 10px;
 }
 
+.partieMain1:hover{
+    background-color: rgb(162, 110, 14);
+    color: black;
+}
+
 .hidden {
     top: -100px; /* Fait disparaître la section en haut */
 }
@@ -234,12 +267,6 @@ img{
     width: 100%;        /* S'adapte aux écrans plus petits */
     margin: 0 auto;     /* Centre le contenu */
     padding: 16px;      /* Ajoute de l'espace sur les côtés */
-}
-
-
-.partieMain1:hover{
-    background-color: rgb(162, 110, 14);
-    color: black;
 }
 
 .decouverte {
@@ -272,6 +299,7 @@ img{
 .partieMain2, .partieMain3, .partieMain4 {
     padding: 20px;
     text-align: center;
+    font-size: medium;
 }
 
 .partieMain2 :hover
@@ -310,7 +338,7 @@ img{
 }
 
 .partieMain1 h2 {
-    font-size: 24px;
+    font-size: medium;
 }
 
 .partieMainDeuxieme {
@@ -320,6 +348,7 @@ img{
     background-color: #1a1a1a;
     color: white;
     border-radius: 10px;
+    font-size: medium;
 }
 
 .partieMain2, .maybachPartieMain, .partieMain3, .partieMain4 {
@@ -353,6 +382,7 @@ img{
     height: 100px;
     padding-top: 10px;
     padding-bottom: 10px;
+    font-size: x-large;
 }
 
 .piedPage:hover{
@@ -418,6 +448,7 @@ img{
     display: flex;
     flex-direction: column;
 }
+
 
 /* Media Queries pour les petits écrans */
 @media (max-width: 768px) {

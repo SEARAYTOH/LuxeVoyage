@@ -460,11 +460,11 @@ button:hover {
         padding: 15px;
     }
     .caracteristique h1, .passezAction h1 {
-        font-size: 1.2em;
+        font-size: 24px;
         padding: 10px;
     }
     h2 {
-        font-size: 1em;
+        font-size: 18px;
     }
 
     .piedPage, .piedPage2 {
